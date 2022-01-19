@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,16 +91,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import _ from 'lodash';
@@ -110,17 +110,17 @@ import buildTree from './buildTree.js';
 import parsers from './parsers.js';
 import formatTree from './formatters/index.js';
 &nbsp;
-const loadData = (<span class="fstat-no" title="function not covered" >filePath) =&gt; { // загрузка данных</span>
-<span class="cstat-no" title="statement not covered" >  const fileExtension = _.last(filePath.split('.')); // извлекаем из данных последнее значение отделенное точкой - получаем расширение файла</span>
-<span class="cstat-no" title="statement not covered" >  const fileData = fs.readFileSync(path.resolve(filePath), 'utf8'); // преобразует строку пути fitePath по стандарту кодирования utf8 и возвращает содержимое</span>
-<span class="cstat-no" title="statement not covered" >  return parsers[fileExtension](fileData);</span>
-<span class="cstat-no" title="statement not covered" >  // из файла parsers извлекаем значение по ключу(расширение файла)</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+const loadData = (filePath) =&gt; { // загрузка данных
+  const fileExtension = _.last(filePath.split('.')); // извлекаем из данных последнее значение отделенное точкой - получаем расширение файла
+  const fileData = fs.readFileSync(path.resolve(filePath), 'utf8'); // преобразует строку пути fitePath по стандарту кодирования utf8 и возвращает содержимое
+  return parsers[fileExtension](fileData);
+  // из файла parsers извлекаем значение по ключу(расширение файла)
+};
 &nbsp;
-const genDiff = <span class="fstat-no" title="function not covered" >(path1, path2, format = 'stylish') =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const tree = buildTree(loadData(path1), loadData(path2));</span>
-<span class="cstat-no" title="statement not covered" >  return formatTree(tree, format);</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+const genDiff = (path1, path2, format = 'stylish') =&gt; {
+  const tree = buildTree(loadData(path1), loadData(path2));
+  return formatTree(tree, format);
+};
 &nbsp;
 export default genDiff;
 &nbsp;</pre></td></tr></table></pre>
@@ -130,7 +130,7 @@ export default genDiff;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Jan 17 2022 20:16:22 GMT+0600 (Омск, стандартное время)
+                at Wed Jan 19 2022 11:08:38 GMT+0600 (Омск, стандартное время)
             </div>
         <script src="../prettify.js"></script>
         <script>
