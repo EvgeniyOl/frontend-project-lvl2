@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/EvgeniyOl/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/EvgeniyOl/frontend-project-lvl2/actions)",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "test-coverage": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --coverageProvider=v8"
@@ -27,9 +27,11 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@jest/globals": "^27.4.6",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "jest-circus": "^27.4.6"
   }
 }
