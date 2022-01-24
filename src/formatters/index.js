@@ -5,7 +5,7 @@ import json from './json.js';
 export default (node, formatType) => {
   switch (formatType) {
     case 'stylish':
-      return stylish(node, 0);
+      return stylish(node);
     case 'plain':
       return plain(node);
     case 'json':
