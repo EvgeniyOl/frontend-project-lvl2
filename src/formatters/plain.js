@@ -11,11 +11,11 @@ const stringify = (data) => {
 };
 
 const styleField = (field, parentFieldsKeys = []) => {
-  const fieldKeys = _.filter([...parentFieldsKeys, field.key]);
+  const fieldKeys = [...parentFieldsKeys, field.key];
   const fieldName = fieldKeys.join('.');
   switch (field.type) {
     case 'root': {
-      const output = _.filter(field.children.flatMap((node) => styleField(node, fieldKeys)));
+      const output = field.children.flatMap((node) => styleField(node, fieldKeys));
       return output.join('\n');
     }
     case 'nested': {
