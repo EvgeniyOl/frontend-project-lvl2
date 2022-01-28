@@ -7,7 +7,7 @@ const compareObjects = (object1, object2) => {
     if (!_.has(object2, key)) { return { type: 'deleted', key, val: object1[key] }; }
     if (!_.has(object1, key)) { return { type: 'added', key, val: object2[key] }; }
 
-    const val1 = object1[key]; // коллекция ключей 1 и 2
+    const val1 = object1[key];
     const val2 = object2[key];
 
     if (_.isPlainObject(val1) && _.isPlainObject(val2)) { return { type: 'nested', key, children: compareObjects(val1, val2) }; }
